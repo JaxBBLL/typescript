@@ -1,7 +1,17 @@
-import { add } from "./utils/index.js"; // 使用js后缀，为了编译后文件浏览器识别
+const log = (value: Function, context: ClassDecoratorContext) => {
+  context.addInitializer(() => {
+    console.log("initial class:", context.name);
+  });
+};
 
-const a = add(1, 3);
-const app = document.getElementById("app")!;
+@log
+class User {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
 
-app.innerHTML = `Hello Typescript ${a}`;
-app.style.cssText = `border:1px solid #ddd;padding:10px`;
+const u = new User("Peter");
+
+console.log(u.name);
