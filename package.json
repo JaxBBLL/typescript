@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run dev\" \"npm run tsc\" ",
-    "dev": "vite",
-    "tsc": "tsc -w"
+    "start": "concurrently \"vite\" \"tsc -w\" ",
+    "build": "tsc && vite build"
   },
   "keywords": [],
   "author": "",
