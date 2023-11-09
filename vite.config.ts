@@ -12,6 +12,6 @@ export default defineConfig({
   plugins: [vitePluginTemplate()],
   server: {
     port: 8090,
-    open: true,
+    open: false,
   },
 });
